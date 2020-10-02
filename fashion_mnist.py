@@ -32,5 +32,6 @@ def show_fashion_mnist(images, labels):
         f.axes.get_yaxis().set_visible(False)
     plt.show()
 
-X, y = mnist_train[0:9]
-show_fashion_mnist(X, get_fashion_mnist_labels(y))
+if __name__ == '__main__':
+    X, y = mnist_train[0:9]
+    show_fashion_mnist(X, get_fashion_mnist_labels(y))
