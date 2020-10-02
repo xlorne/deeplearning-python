@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # File Name: autograd_test.py
-# Description:
+# Description: http://zh.d2l.ai/chapter_prerequisite/autograd.html
 # Create Time: 2020-10-02 17:18
 # Author: lorne
 

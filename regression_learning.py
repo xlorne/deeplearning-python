@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# http://zh.d2l.ai/chapter_deep-learning-basics/linear-regression-scratch.html
 # -*- coding: utf-8 -*-
 
 from IPython import display
