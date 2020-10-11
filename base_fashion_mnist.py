@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: fashion_mnist.py
+# File Name: base_fashion_mnist.py
 # Description: http://zh.d2l.ai/chapter_deep-learning-basics/fashion-mnist.html
 # Create Time: 2020-10-02 19:26
 # Author: lorne

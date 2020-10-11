@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: dropout_test.py
+# File Name: nn_dropout_test.py
 # Description: 丢弃法学习
 # 丢弃法中的drop_prob是超参数，不会参与反向传播训练，起作用就是随机概率屏蔽掉该神经元的计算，从而达到防止过拟合的效果，等同于正则化。
 # http://zh.d2l.ai/chapter_deep-learning-basics/dropout.html

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: softmax_regression_gluon.py
+# File Name: nn_softmax_regression_gluon.py
 # Description: http://zh.d2l.ai/chapter_deep-learning-basics/softmax-regression-gluon.html
 # Create Time: 2020-10-02 20:30
 # Author: lorne

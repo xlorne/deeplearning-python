@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: mlp_gluon.py
+# File Name: nn_mlp_gluon.py
 # Description:
 # Create Time: 2020-10-02 20:35
 # Author: lorne

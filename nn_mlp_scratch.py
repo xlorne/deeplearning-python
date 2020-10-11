@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: mlp_scratch.py
+# File Name: nn_mlp_scratch.py
 # Description:
 # Create Time: 2020-10-02 20:33
 # Author: lorne

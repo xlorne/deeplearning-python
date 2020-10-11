@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: vgg_test.py
+# File Name: cnn_vgg_test.py
 # Description: VGG
 # http://zh.d2l.ai/chapter_convolutional-neural-networks/vgg.html
 # Create Time: 2020-10-11 18:01

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: lenet_test.py
+# File Name: cnn_lenet_test.py
 # Description: LeNet Learning
 # http://zh.d2l.ai/chapter_convolutional-neural-networks/lenet.html
 # Create Time: 2020-10-11 16:04

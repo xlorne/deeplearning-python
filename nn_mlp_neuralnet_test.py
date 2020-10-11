@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: mlp_neuralnet_test.py
+# File Name: nn_mlp_neuralnet_test.py
 # Description: 深度神经网络 fashion数据测试
 # Create Time: 2020-10-11 11:44
 # Author: lorne

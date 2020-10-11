@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: alexnet_test.py
+# File Name: cnn_alexnet_test.py
 # Description: AlexNet Learning
 # http://zh.d2l.ai/chapter_convolutional-neural-networks/alexnet.html
 # Create Time: 2020-10-11 16:46

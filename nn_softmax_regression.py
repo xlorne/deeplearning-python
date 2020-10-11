@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File Name: softmax_regression.py
+# File Name: nn_softmax_regression.py
 # Description:
 # Create Time: 2020-10-02 19:54
 # Author: lorne
 
 import d2lzh as d2l
 from mxnet import autograd, nd
-import fashion_mnist as fashion
+import base_fashion_mnist as fashion
 
 batch_size = 256
 train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size)
