@@ -186,7 +186,7 @@ def display(img, output, threshold):
         bbox = [row[2:6] * nd.array((w, h, w, h), ctx=row.context)]
         d2l.show_bboxes(fig.axes, bbox, '%.2f' % score, 'w')
 
-img = image.imread('../img/pikachu.jpg')
+img = image.imread('img/pikachu.jpg')
 feature = image.imresize(img, 256, 256).astype('float32')
 X = feature.transpose((2, 0, 1)).expand_dims(axis=0)
 output = predict(X)
