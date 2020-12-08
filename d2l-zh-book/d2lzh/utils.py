@@ -19,7 +19,7 @@ import numpy as np
 VOC_CLASSES = ['background', 'aeroplane', 'bicycle', 'bird', 'boat',
                'bottle', 'bus', 'car', 'cat', 'chair', 'cow',
                'diningtable', 'dog', 'horse', 'motorbike', 'person',
-               'potted plant', 'sheep', 'sofa', 'test', 'tv/monitor']
+               'potted plant', 'sheep', 'sofa', 'train', 'tv/monitor']
 
 
 VOC_COLORMAP = [[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],
@@ -128,8 +128,8 @@ def download_imdb(data_dir='../data'):
 def _download_pikachu(data_dir):
     root_url = ('https://apache-mxnet.s3-accelerate.amazonaws.com/'
                 'gluon/dataset/pikachu/')
-    dataset = {'test.rec': 'e6bcb6ffba1ac04ff8a9b1115e650af56ee969c8',
-               'test.idx': 'dcf7318b2602c06428b9988470c731621716c393',
+    dataset = {'train.rec': 'e6bcb6ffba1ac04ff8a9b1115e650af56ee969c8',
+               'train.idx': 'dcf7318b2602c06428b9988470c731621716c393',
                'val.rec': 'd6c33f799b4d058e82f2cb5bd9a976f69d72d520'}
     for k, v in dataset.items():
         gutils.download(root_url + k, os.path.join(data_dir, k), sha1_hash=v)
@@ -259,8 +259,8 @@ def load_data_pikachu(batch_size, edge_size=256):
     data_dir = '../data/pikachu'
     _download_pikachu(data_dir)
     train_iter = image.ImageDetIter(
-        path_imgrec=os.path.join(data_dir, 'test.rec'),
-        path_imgidx=os.path.join(data_dir, 'test.idx'),
+        path_imgrec=os.path.join(data_dir, 'train.rec'),
+        path_imgidx=os.path.join(data_dir, 'train.idx'),
         batch_size=batch_size,
         data_shape=(3, edge_size, edge_size),
         shuffle=True,
@@ -353,7 +353,7 @@ def preprocess_imdb(data, vocab):
     return features, labels
 
 
-def read_imdb(folder='test'):
+def read_imdb(folder='train'):
     """Read the IMDB data set for sentiment analysis."""
     data = []
     for label in ['pos', 'neg']:
@@ -369,7 +369,7 @@ def read_imdb(folder='test'):
 def read_voc_images(root='../data/VOCdevkit/VOC2012', is_train=True):
     """Read VOC images."""
     txt_fname = '%s/ImageSets/Segmentation/%s' % (
-        root, 'test.txt' if is_train else 'val.txt')
+        root, 'train.txt' if is_train else 'val.txt')
     with open(txt_fname, 'r') as f:
         images = f.read().split()
     features, labels = [None] * len(images), [None] * len(images)
@@ -551,7 +551,7 @@ def train(train_iter, test_iter, net, loss, trainer, ctx, num_epochs):
                                  for y_hat, y in zip(y_hats, ys)])
             m += sum([y.size for y in ys])
         test_acc = evaluate_accuracy(test_iter, net, ctx)
-        print('epoch %d, loss %.4f, test acc %.3f, test acc %.3f, '
+        print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f, '
               'time %.1f sec'
               % (epoch + 1, train_l_sum / n, train_acc_sum / m, test_acc,
                  time.time() - start))
@@ -671,7 +671,7 @@ def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
             train_acc_sum += (y_hat.argmax(axis=1) == y).sum().asscalar()
             n += y.size
         test_acc = evaluate_accuracy(test_iter, net)
-        print('epoch %d, loss %.4f, test acc %.3f, test acc %.3f'
+        print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f'
               % (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc))
 
 
@@ -694,7 +694,7 @@ def train_ch5(net, train_iter, test_iter, batch_size, trainer, ctx,
             train_acc_sum += (y_hat.argmax(axis=1) == y).sum().asscalar()
             n += y.size
         test_acc = evaluate_accuracy(test_iter, net, ctx)
-        print('epoch %d, loss %.4f, test acc %.3f, test acc %.3f, '
+        print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f, '
               'time %.1f sec'
               % (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc,
                  time.time() - start))
