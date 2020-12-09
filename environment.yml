@@ -6,6 +6,9 @@ dependencies:
   - mxnet-cu101==1.5.0 #gpu cuda版本
 #  - mxnet==1.5.0 #cpu版本
   - d2lzh==1.0.0
+  - labelme
   - jupyter
   - matplotlib
+  - lxml
+  - gluoncv
   - pandas
